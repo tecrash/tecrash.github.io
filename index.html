@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gupta Shirts Co. | Wholesale Shirts</title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👔</text></svg>"><link rel="stylesheet" href="style.css"></head><body>
+<!-- ENTRY SCENE -->
+<div id="intro">
+ <div class="sky"></div><div class="street"></div>
+ <div class="shopfront" id="shopfront">
+  <div class="signboard">👔 GUPTA SHIRTS <small>Wholesale Apparel • Since 1998</small></div>
+  <div class="window w1"><span>NEW<br>ARRIVALS</span></div><div class="window w2"><span>BULK<br>PRICING</span></div>
+  <div class="doorway"><div class="interior"><div class="rack"></div><div class="salesman-mini">👨‍💼</div></div>
+   <div class="door left"></div><div class="door right"></div></div>
+ </div>
+ <div class="customer" id="customer"><div class="head"></div><div class="body"></div><div class="leg l"></div><div class="leg r"></div></div>
+ <div class="greet" id="greet"><div class="bigsales">👨‍💼</div><p>Welcome to Gupta Shirts Co.! 👋 I'm Ryan, your sales consultant.<br><b>Let me walk you through our latest collection at wholesale prices.</b></p><button id="enterBtn">Enter the Showroom →</button></div>
+ <button id="skip">Skip intro ⏭</button>
+</div>
+<!-- SHOP -->
+<header><div class="logo">👔 Gupta Shirts <span>Wholesale</span></div>
+<nav><a href="#catalog">Catalog</a><a href="#" id="ordersLink">My Orders</a><button id="cartBtn">🛒 Cart <b id="cartCount">0</b></button></nav></header>
+<main id="shop">
+<section class="hero"><div><h1>Premium shirts in bulk, at <em>factory prices</em></h1><p>Multiple colors per design • Sizes S–3XL • Bulk discounts up to 12% • GST invoice</p>
+<div class="tiers"><span>50+ pcs: 3% off</span><span>100+ pcs: 6% off</span><span>250+ pcs: 9% off</span><span>500+ pcs: 12% off</span></div></div></section>
+<section id="catalog"><div class="filters"><input id="search" placeholder="🔍 Search design (cotton, check, linen...)"><select id="catFilter"><option value="">All Categories</option></select><select id="sort"><option value="">Sort</option><option value="lo">Price: Low→High</option><option value="hi">Price: High→Low</option></select></div>
+<div class="grid" id="grid"></div></section>
+</main>
+<!-- MATRIX MODAL -->
+<div class="modal" id="matrixModal"><div class="mbox wide"><button class="x" data-close>×</button><div id="matrixBody"></div></div></div>
+<!-- CART -->
+<aside id="cart"><div class="chead"><h2>🛒 Your Cart</h2><button class="x" id="closeCart">×</button></div><div id="cartBody"></div></aside>
+<!-- CHECKOUT -->
+<div class="modal" id="checkoutModal"><div class="mbox"><button class="x" data-close>×</button><div id="checkoutBody"></div></div></div>
+<div class="modal" id="ordersModal"><div class="mbox wide"><button class="x" data-close>×</button><div id="ordersBody"></div></div></div>
+<!-- CHAT -->
+<button id="chatFab">👨‍💼<span>Ask Ryan, Sales Consultant</span></button>
+<div id="chat"><div class="chathead">👨‍💼 <div><b>Ryan Carter</b><small>AI Sales Consultant • Online</small></div><button class="x" id="chatClose">×</button></div>
+<div id="msgs"></div><div class="quick" id="quick"></div><form id="chatForm"><input id="chatIn" placeholder="Ask about price, MOQ, sizes, or 'add 100 white oxford'..." autocomplete="off"><button>➤</button></form></div>
+<div id="toast"></div>
+<div id="printArea"></div>
+<script src="data.js"></script><script src="salesman.js"></script><script src="app.js"></script></body></html>
