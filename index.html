@@ -1,38 +1,79 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Gupta Shirts Co. | Wholesale Shirts</title><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👔</text></svg>"><link rel="stylesheet" href="style.css"></head><body>
-<!-- ENTRY SCENE -->
-<div id="intro">
- <div class="sky"></div><div class="street"></div>
- <div class="shopfront" id="shopfront">
-  <div class="signboard">👔 GUPTA SHIRTS <small>Wholesale Apparel • Since 1998</small></div>
-  <div class="window w1"><span>NEW<br>ARRIVALS</span></div><div class="window w2"><span>BULK<br>PRICING</span></div>
-  <div class="doorway"><div class="interior"><div class="rack"></div><div class="salesman-mini">👨‍💼</div></div>
-   <div class="door left"></div><div class="door right"></div></div>
+<title>Gupta &amp; Co. — Fine Shirtmakers · Wholesale</title>
+<meta name="description" content="Premium men's shirts at wholesale. Configure colours and sizes, volume pricing, GST invoicing.">
+<meta name="theme-color" content="#0d0d0e">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230d0d0e%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22%23c6a15b%22 font-family=%22serif%22>G</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=4">
+</head><body class="loading">
+<a class="skiplink" href="#collection">Skip to collection</a>
+<!-- PRELOADER -->
+<div id="preloader" aria-hidden="true"><div class="mono"><span>G</span><i></i><span>C</span></div><div class="pl-name">GUPTA &amp; CO.</div><div class="pl-bar"><b id="plBar"></b></div><div class="pl-pct" id="plPct">0</div></div>
+<!-- CINEMATIC INTRO -->
+<div id="intro" aria-label="Boutique entrance">
+ <canvas id="introCanvas"></canvas>
+ <div class="intro2d" id="intro2d"><div class="i2-interior"></div><div class="i2-front"><div class="i2-door l"></div><div class="i2-door r"></div></div></div>
+ <div class="intro-sign" id="introSign"><small>Est. 1998 · Fine Shirtmakers</small>GUPTA &amp; CO.</div>
+ <div class="intro-vignette"></div>
+ <div class="welcome glass" id="welcome" role="dialog" aria-label="Welcome">
+  <img src="assets/consultant.svg" alt="Ryan Carter, Sales Consultant" class="w-avatar">
+  <div class="eyebrow">Private Wholesale Showroom</div>
+  <h2>Good evening, and welcome.</h2>
+  <p>I'm <b>Ryan Carter</b>, your sales consultant. Allow me to guide you through this season's collection — ten signature designs, thirty-nine colourways, all at trade pricing.</p>
+  <div class="w-actions"><button class="btn gold" id="enterBtn">Enter the Collection</button><button class="btn line light" id="talkBtn">Speak with Ryan</button></div>
  </div>
- <div class="customer" id="customer"><div class="head"></div><div class="body"></div><div class="leg l"></div><div class="leg r"></div></div>
- <div class="greet" id="greet"><div class="bigsales">👨‍💼</div><p>Welcome to Gupta Shirts Co.! 👋 I'm Ryan, your sales consultant.<br><b>Let me walk you through our latest collection at wholesale prices.</b></p><button id="enterBtn">Enter the Showroom →</button></div>
- <button id="skip">Skip intro ⏭</button>
+ <button id="skip" class="skip">Skip intro</button>
+ <div class="intro-hint" id="introHint">Stepping inside…</div>
 </div>
-<!-- SHOP -->
-<header><div class="logo">👔 Gupta Shirts <span>Wholesale</span></div>
-<nav><a href="#catalog">Catalog</a><a href="#" id="ordersLink">My Orders</a><button id="cartBtn">🛒 Cart <b id="cartCount">0</b></button></nav></header>
-<main id="shop">
-<section class="hero"><div><h1>Premium shirts in bulk, at <em>factory prices</em></h1><p>Multiple colors per design • Sizes S–3XL • Bulk discounts up to 12% • GST invoice</p>
-<div class="tiers"><span>50+ pcs: 3% off</span><span>100+ pcs: 6% off</span><span>250+ pcs: 9% off</span><span>500+ pcs: 12% off</span></div></div></section>
-<section id="catalog"><div class="filters"><input id="search" placeholder="🔍 Search design (cotton, check, linen...)"><select id="catFilter"><option value="">All Categories</option></select><select id="sort"><option value="">Sort</option><option value="lo">Price: Low→High</option><option value="hi">Price: High→Low</option></select></div>
-<div class="grid" id="grid"></div></section>
+<!-- CURSOR -->
+<div class="cur-dot" aria-hidden="true"></div><div class="cur-ring" aria-hidden="true"></div>
+<!-- HEADER -->
+<header id="hdr"><a href="#top" class="brand" aria-label="Gupta & Co. home"><span class="mono-s">G<i></i>C</span><span class="bname">GUPTA &amp; CO.<small>Fine Shirtmakers · Wholesale</small></span></a>
+<nav aria-label="Main"><a href="#collection">Collection</a><a href="#pricing">Volume Pricing</a><a href="#process">How It Works</a><button class="navlink" id="ordersLink">Orders</button><button id="cartBtn" class="cartbtn" aria-label="Open cart"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 016 0"/></svg><span>Bag</span><b id="cartCount">0</b></button></nav></header>
+<main id="top">
+<section class="hero" id="hero"><div class="hero-bg" id="heroBg"></div><div class="hero-in">
+ <div class="eyebrow reveal">Autumn / Winter 2026 · Trade Collection</div>
+ <h1 class="reveal"><span>The art of the shirt,</span><em>at wholesale scale.</em></h1>
+ <p class="reveal">Ten signature designs. Thirty-nine colourways. Sizes S to 3XL, configured piece by piece, with volume pricing and GST invoicing built in.</p>
+ <div class="hero-cta reveal"><a href="#collection" class="btn gold">Explore the Collection</a><button class="btn line light" id="heroChat">Speak with a Consultant</button></div>
+ </div>
+ <div class="stats reveal"><div><b data-count="10">0</b><span>Signature designs</span></div><div><b data-count="39">0</b><span>Colourways</span></div><div><b data-count="36">0</b><span>Pieces minimum</span></div><div><b data-count="12">0</b><span>% volume pricing</span></div></div>
+ <div class="scrollcue">Scroll</div>
+</section>
+<div class="marquee" aria-hidden="true"><div>Long-staple cotton · Linen · Khadi · Satin · Denim · Yarn-dyed checks · GST invoicing · Pan-India dispatch in 72 hours · Long-staple cotton · Linen · Khadi · Satin · Denim · Yarn-dyed checks · GST invoicing · Pan-India dispatch in 72 hours ·</div></div>
+<section id="collection" class="sec">
+ <div class="sec-head reveal"><div><div class="eyebrow">The Collection</div><h2>Signature designs</h2></div><p>Each design is offered in multiple colourways. Mix colours and sizes freely to meet the minimum order quantity.</p></div>
+ <div class="toolbar reveal"><div class="chips" id="catChips" role="tablist"></div><div class="tools"><label class="search"><svg viewBox="0 0 24 24" width="16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="search" placeholder="Search fabric, style, colour" aria-label="Search"></label>
+ <select id="sort" aria-label="Sort"><option value="">Featured</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option><option value="moq">Lowest MOQ</option></select></div></div>
+ <div class="grid" id="grid"></div>
+</section>
+<section id="pricing" class="sec dark">
+ <div class="sec-head reveal"><div><div class="eyebrow">Volume Pricing</div><h2>The more you stock,<br><em>the more you save.</em></h2></div><p>Discounts are applied automatically per design, on the total pieces across all colours and sizes.</p></div>
+ <div class="tiers">
+  <div class="tier reveal"><span>50+</span><b>3%</b><small>pieces per design</small></div><div class="tier reveal"><span>100+</span><b>6%</b><small>pieces per design</small></div><div class="tier reveal"><span>250+</span><b>9%</b><small>pieces per design</small></div><div class="tier reveal feat"><span>500+</span><b>12%</b><small>pieces per design</small></div></div>
+ <div class="perks reveal"><div><h4>Free shipping</h4><p>On orders above ₹25,000.</p></div><div><h4>GST invoicing</h4><p>5% GST with CGST/SGST split and input credit.</p></div><div><h4>72-hour dispatch</h4><p>Delivered pan-India in 4–7 days.</p></div><div><h4>Flexible payment</h4><p>UPI, bank transfer, or cash on delivery.</p></div></div>
+</section>
+<section id="process" class="sec">
+ <div class="sec-head reveal"><div><div class="eyebrow">How It Works</div><h2>Ordering, refined.</h2></div></div>
+ <ol class="steps"><li class="reveal"><span>01</span><h4>Choose a design</h4><p>Browse the collection or ask Ryan for a recommendation.</p></li><li class="reveal"><span>02</span><h4>Configure the matrix</h4><p>Enter pieces for every colour and size — totals and savings update live.</p></li><li class="reveal"><span>03</span><h4>Review your bag</h4><p>Edit any breakdown, see tier discounts and GST before you commit.</p></li><li class="reveal"><span>04</span><h4>Confirm &amp; invoice</h4><p>Add your business details and receive a tax invoice instantly.</p></li></ol>
+</section>
 </main>
-<!-- MATRIX MODAL -->
-<div class="modal" id="matrixModal"><div class="mbox wide"><button class="x" data-close>×</button><div id="matrixBody"></div></div></div>
+<footer><div class="f-brand"><span class="mono-s big">G<i></i>C</span><p>Gupta &amp; Co. — Fine Shirtmakers since 1998.<br>Gandhi Nagar Market, Delhi, India.</p></div><div class="f-cols"><div><h5>Trade</h5><a href="#collection">Collection</a><a href="#pricing">Volume pricing</a><button class="navlink" data-sizeguide>Size guide</button></div><div><h5>Service</h5><button class="navlink" id="footChat">Contact a consultant</button><button class="navlink" id="footOrders">Order history</button></div></div><div class="f-bottom">© 2026 Gupta &amp; Co. Demonstration storefront — payments are simulated.</div></footer>
+<!-- QUICK VIEW -->
+<div class="modal" id="qvModal" role="dialog" aria-modal="true" aria-label="Product details"><div class="mbox qv"><button class="x" data-close aria-label="Close">×</button><div id="qvBody"></div></div></div>
+<div class="modal" id="matrixModal" role="dialog" aria-modal="true" aria-label="Order matrix"><div class="mbox wide"><button class="x" data-close aria-label="Close">×</button><div id="matrixBody"></div></div></div>
+<div class="modal" id="sizeModal" role="dialog" aria-modal="true" aria-label="Size guide"><div class="mbox"><button class="x" data-close aria-label="Close">×</button><div id="sizeBody"></div></div></div>
+<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Checkout"><div class="mbox co"><button class="x" data-close aria-label="Close">×</button><div id="checkoutBody"></div></div></div>
+<div class="modal" id="ordersModal" role="dialog" aria-modal="true" aria-label="Orders"><div class="mbox wide"><button class="x" data-close aria-label="Close">×</button><div id="ordersBody"></div></div></div>
 <!-- CART -->
-<aside id="cart"><div class="chead"><h2>🛒 Your Cart</h2><button class="x" id="closeCart">×</button></div><div id="cartBody"></div></aside>
-<!-- CHECKOUT -->
-<div class="modal" id="checkoutModal"><div class="mbox"><button class="x" data-close>×</button><div id="checkoutBody"></div></div></div>
-<div class="modal" id="ordersModal"><div class="mbox wide"><button class="x" data-close>×</button><div id="ordersBody"></div></div></div>
+<div class="scrim" id="scrim"></div>
+<aside id="cart" aria-label="Shopping bag"><div class="chead"><div><div class="eyebrow">Your Selection</div><h3>Wholesale Bag</h3></div><button class="x" id="closeCart" aria-label="Close bag">×</button></div><div id="cartBody"></div></aside>
 <!-- CHAT -->
-<button id="chatFab">👨‍💼<span>Ask Ryan, Sales Consultant</span></button>
-<div id="chat"><div class="chathead">👨‍💼 <div><b>Ryan Carter</b><small>AI Sales Consultant • Online</small></div><button class="x" id="chatClose">×</button></div>
-<div id="msgs"></div><div class="quick" id="quick"></div><form id="chatForm"><input id="chatIn" placeholder="Ask about price, MOQ, sizes, or 'add 100 white oxford'..." autocomplete="off"><button>➤</button></form></div>
-<div id="toast"></div>
+<button id="chatFab" aria-label="Chat with Ryan, sales consultant"><img src="assets/consultant.svg" alt=""><span><b>Ryan Carter</b><small>Sales Consultant · Online</small></span><i class="pulse"></i></button>
+<div id="chat" class="glass" role="dialog" aria-label="Sales consultant chat"><div class="chathead"><img src="assets/consultant.svg" alt=""><div><b>Ryan Carter</b><small><i></i>AI Sales Consultant · Online</small></div><button class="x" id="chatClose" aria-label="Close chat">×</button></div>
+<div id="msgs" aria-live="polite"></div><div class="quick" id="quick"></div><form id="chatForm"><input id="chatIn" placeholder="Ask about pricing, MOQ, sizes…" autocomplete="off" aria-label="Message"><button aria-label="Send"><svg viewBox="0 0 24 24" width="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button></form></div>
+<div id="toast" role="status"></div>
 <div id="printArea"></div>
-<script src="data.js"></script><script src="salesman.js"></script><script src="app.js"></script></body></html>
+<script src="data.js?v=4"></script><script src="salesman.js?v=4"></script><script src="app.js?v=4"></script><script type="module" src="intro.js?v=4"></script>
+</body></html>
